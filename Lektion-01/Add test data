@@ -1,0 +1,61 @@
+-- Lägg till lite dummy data...
+-- Töm tabellerna innan vi fyller på med testdata...
+DELETE FROM Customers;
+DELETE FROM Products;
+DELETE FROM SalesOrders;
+
+-- Lägg till testdata i Customers...
+INSERT INTO Customers(
+  FirstName,
+  LastName,
+  Email,
+  Phone,
+  Address,
+  PostalCode,
+  City
+)
+VALUES(
+  'Michael',
+  'Gustavsson',
+  'michael@gmail.com',
+  '010-11223344',
+  'Storgatan 1',
+  '123 45',
+  'Stora Staden'
+);
+
+-- Lägg till testdata i Products...
+INSERT INTO Products(
+  ItemNumber,
+  Name,
+  Price
+)
+VALUES(
+  'AA1111',
+  'Skruvdragare DeWalt',
+  2495
+);
+
+-- Lägg till testdata i SalesOrders...
+INSERT INTO SalesOrders(
+  OrderDate,
+  CustomerId
+)
+VALUES(
+  datetime('now'),
+  1
+),
+(
+  datetime('now'),
+  1
+),(
+  datetime('now'),
+  1
+),(
+  datetime('now'),
+  1
+),(
+  datetime('now'),
+  1
+);
+
