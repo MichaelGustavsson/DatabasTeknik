@@ -1,0 +1,39 @@
+-- Skapa tabellerna...
+CREATE TABLE Customers(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  FirstName varchar(20),
+  LastName varchar(30),
+  Email varchar(128),
+  Phone varchar(20)
+);
+
+CREATE TABLE Addresses(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  CustomerId int,
+  AddressType int,
+  AddressLine varchar(60),
+  PostalCode varchar(10),
+  City varchar(30)
+);
+
+CREATE TABLE Products(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ItemNumber varchar(15) UNIQUE,
+  Name varchar(80),
+  Price float
+);
+
+CREATE TABLE SalesOrders(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  OrderDate DATETIME,
+  CustomerId int
+);
+
+-- Skapa tabellen OrderItems...
+CREATE TABLE OrderItems(
+  OrderId int,
+  ProductId int,
+  Quantity int,
+  Price float,
+  PRIMARY KEY(OrderId,ProductId)
+);

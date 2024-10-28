@@ -1,0 +1,32 @@
+INSERT INTO Products(ItemNumber,Name,Price)
+VALUES
+  (
+    'AA1111',
+    'Dewalt Skruvdragare',
+    2995
+  ),
+  (
+    'AA2222',
+    'Bosch Professional Skruvdragare',
+    3495
+  ),
+  (
+    'AA3333',
+    'Dewalt Cirkelsåg',
+    2495
+  ),
+  (
+    'BB4444',
+    'Bosch Professional Cirkelsåg',
+    2195
+  ),
+  (
+    'BB3333',
+    'Hammare',
+    495
+  ),
+  (
+    'CB3333',
+    'Spikpistol',
+    4995
+  )

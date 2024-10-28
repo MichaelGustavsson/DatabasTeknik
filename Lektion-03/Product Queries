@@ -1,0 +1,42 @@
+-- Lägga till data i tabeller...
+-- INSERT INTO tabellnamnet(kolumnnamn/kolumnlista)
+-- VALUES(värde/data som vi ger varje kolumn i kolumnlistan)
+-- INSERT INTO Products(ItemNumber,Name,Price)
+-- VALUES
+--   ('AA2222', 'Slägga', 1095),
+--   ('BB1234', 'Hammare', 595),
+--   ('BB5678', 'Spikpistol', 5975);
+
+-- SELECT kolumnlista [* alla kolumner] FROM tabellnamnet
+SELECT * FROM Products;
+
+-- FILTRERING MED SELECT...
+-- SELECT kolumner FROM tabellnamn WHERE villkor för det vi vill hämta...
+SELECT * FROM Products WHERE Id = 2;
+SELECT * FROM Products WHERE ItemNumber = 'BB1234';
+
+-- Sök på kolumn med delar av dess innehåll...
+-- Namnet söks på en exakt matchning
+SELECT * FROM Products WHERE Name = 'Slägga';
+
+-- Wildcard matchning (LIKE) ett mönster (% vad som helst)
+-- (_ matchar ett tecken)
+SELECT * FROM Products WHERE Name LIKE 'Slägg%';
+SELECT * FROM Products WHERE Name LIKE '%a%';
+SELECT * FROM Products WHERE Name LIKE 'Sl_gg_';
+SELECT * FROM Products WHERE Name LIKE '%DeWalt%';
+
+-- UPDATE Products SET Price = 995 WHERE Id = 2
+
+/* Sökning med hjälp av större eller mindre */
+SELECT * FROM Products WHERE Price >= 995;
+SELECT * FROM Products WHERE Price <= 995;
+
+/* Kombinera kolumner och villkor */
+SELECT * FROM Products WHERE ItemNumber = 'AA2222' OR Price > 595;
+SELECT * FROM Products WHERE ItemNumber = 'AA2222' AND Price > 595;
+
+/* Villkor för ett område (range) */
+SELECT * FROM Products WHERE Price BETWEEN 1000 AND 6000;
+-- Samma sak som ovan
+SELECT * FROM Products WHERE Price >= 1000 AND Price <= 6000;
