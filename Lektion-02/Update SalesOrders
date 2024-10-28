@@ -1,0 +1,3 @@
+-- Uppdatera SalesOrders tabellen...
+ALTER TABLE SalesOrders
+DROP COLUMN OrderItem

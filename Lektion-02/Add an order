@@ -1,0 +1,28 @@
+-- Lägg till en beställning och uppdatera orderrads tabellen...
+
+-- Börja med att tömma ut data ur SalesOrders...
+DELETE FROM SalesOrders;
+
+-- Lägg till en ny beställning...
+INSERT INTO SalesOrders(
+  OrderDate,
+  CustomerId
+)
+VALUES(
+  datetime('now'),
+  1
+);
+
+-- Lägg till beställningen och produkt i OrderItems tabellen...
+INSERT INTO OrderItems(
+  OrderId,
+  ProductId,
+  Quantity,
+  Price
+)
+VALUES(
+  6,
+  1,
+  1,
+  2195
+);

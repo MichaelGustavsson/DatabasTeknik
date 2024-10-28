@@ -1,0 +1,28 @@
+-- Join queries
+
+-- Hämta kund och order data...
+-- Två tabells join...
+SELECT * FROM Customers INNER JOIN SalesOrders
+  ON Customers.Id = SalesOrders.CustomerId;
+
+-- Tre tabells join...
+SELECT
+  *
+FROM Customers INNER JOIN SalesOrders
+  ON Customers.Id = SalesOrders.CustomerId INNER JOIN OrderItems
+  ON SalesOrders.Id = OrderItems.OrderId
+
+-- Koppla samman tabeller för att få ut en kunds inköp...
+SELECT
+  FirstName,
+  LastName,
+  Email,
+  OrderDate,
+  ItemNumber,
+  Products.Name,
+  Quantity,
+  OrderItems.Price
+FROM Customers INNER JOIN SalesOrders
+  ON Customers.Id = SalesOrders.CustomerId INNER JOIN OrderItems
+  ON SalesOrders.Id = OrderItems.OrderId INNER JOIN Products
+  ON Products.Id = OrderItems.ProductId

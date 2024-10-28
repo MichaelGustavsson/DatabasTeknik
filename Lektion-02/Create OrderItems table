@@ -1,0 +1,9 @@
+-- Skapa tabellen OrderItems...
+
+CREATE TABLE OrderItems(
+  OrderId int,
+  ProductId int,
+  Quantity int,
+  Price float,
+  PRIMARY KEY(OrderId,ProductId)
+)

@@ -1,0 +1,4 @@
+-- Radera tabellerna...
+DROP TABLE Customers;
+DROP TABLE Products;
+DROP TABLE SalesOrders;
