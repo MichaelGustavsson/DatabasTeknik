@@ -1,0 +1,46 @@
+-- Skapa tabellerna...
+CREATE TABLE IF NOT EXISTS  Customers(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  FirstName TEXT,
+  LastName TEXT,
+  Email TEXT,
+  Phone TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Addresses(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  CustomerId INTEGER,
+  AddressType INTEGER,
+  AddressLine TEXT,
+  PostalCode TEXT,
+  City TEXT,
+  FOREIGN KEY(CustomerId) REFERENCES Customers(Id),
+  FOREIGN KEY(AddressType) REFERENCES AddressTypes(Id)
+);
+
+CREATE TABLE IF NOT EXISTS AddressTypes(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  AddressType TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Products(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ItemNumber TEXT UNIQUE,
+  Name TEXT,
+  Price float
+);
+
+CREATE TABLE IF NOT EXISTS SalesOrders(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  OrderDate TEXT,
+  CustomerId INTEGER
+);
+
+-- Skapa tabellen OrderItems...
+CREATE TABLE IF NOT EXISTS OrderItems(
+  OrderId INTEGER,
+  ProductId INTEGER,
+  Quantity INTEGER,
+  Price FLOAT,
+  PRIMARY KEY(OrderId,ProductId)
+);

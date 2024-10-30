@@ -1,0 +1,4 @@
+-- För att ta bort rader ur en tabell...
+/*
+  DELETE FROM tabellnamn WHERE id = id;
+*/

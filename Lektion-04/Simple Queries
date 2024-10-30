@@ -1,0 +1,11 @@
+-- Exempel frågor...
+SELECT * FROM Customers;
+SELECT Id, FirstName,LastName,Email FROM Customers;
+
+SELECT * FROM Products;
+SELECT ItemNumber, Name, Price FROM Products;
+
+SELECT * FROM SalesOrders;
+SELECT OrderDate, CustomerId FROM SalesOrders;
+
+

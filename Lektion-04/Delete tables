@@ -1,0 +1,7 @@
+-- Radera tabellerna...
+DROP TABLE IF EXISTS Customers;
+DROP TABLE IF EXISTS Addresses;
+DROP TABLE IF EXISTS AddressTypes;
+DROP TABLE IF EXISTS Products;
+DROP TABLE IF EXISTS SalesOrders;
+DROP TABLE IF EXISTS OrderItems;

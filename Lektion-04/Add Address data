@@ -1,0 +1,49 @@
+INSERT INTO Addresses(
+  CustomerId,
+  AddressType,
+  AddressLine,
+  PostalCode,
+  City
+)
+VALUES(
+  1,
+  1,
+  'Gatan 1',
+  '44445',
+  'Stenungsund'
+),
+(
+  1,
+  2,
+  'Munkgärdet 15',
+  '44432',
+  'Stenungsund'
+),
+(
+  2,
+  1,
+  'Gatan 1',
+  '44445',
+  'Stenungsund'
+),
+(
+  3,
+  1,
+  'Gatan 1',
+  '44445',
+  'Stenungsund'
+),
+(
+  4,
+  1,
+  'Gatan 1',
+  '44445',
+  'Stenungsund'
+),
+(
+  5,
+  1,
+  'Gatan 1',
+  '44445',
+  'Stenungsund'
+);

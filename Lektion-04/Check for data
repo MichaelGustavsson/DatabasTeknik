@@ -1,0 +1,5 @@
+SELECT * FROM Customers;
+SELECT * FROM Addresses;
+SELECT * FROM SalesOrders;
+SELECT * FROM Products;
+SELECT * FROM OrderItems;
