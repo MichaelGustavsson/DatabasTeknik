@@ -4,6 +4,7 @@
   adressuppgifter addresstype adress, postnr och ort
 */
 
+/*
 SELECT
   FirstName,
   LastName,
@@ -14,7 +15,7 @@ SELECT
   City
 FROM Customers INNER JOIN Addresses
   ON Customers.Id = Addresses.CustomerId;
-
+*/
 /*
   Lägg i frågan så att vi ser i text vilken address typ
   vi får tillbaka...
@@ -26,7 +27,9 @@ SELECT
   AddressTypes.AddressType,
   AddressLine,
   PostalCode,
-  City
+  City,
+  OrderDate
 FROM Customers INNER JOIN Addresses
   ON Customers.Id = Addresses.CustomerId INNER JOIN AddressTypes
-  ON Addresses.AddressType = AddressTypes.Id;
+  ON Addresses.AddressType = AddressTypes.Id INNER JOIN SalesOrders
+  ON Customers.Id = SalesOrders.CustomerId;

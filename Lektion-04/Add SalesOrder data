@@ -1,0 +1,26 @@
+-- Lägg till en beställning och uppdatera orderrads tabellen...
+
+-- Lägg till en ny beställning...
+-- En insert utan orderdate...
+INSERT INTO SalesOrders(
+  CustomerId
+)
+VALUES
+(
+  1
+);
+
+-- En insert som anger orderdate...
+INSERT INTO SalesOrders(
+  OrderDate,
+  CustomerId
+)
+VALUES
+(
+  datetime('2024-08-25'),
+  3
+),
+(
+  datetime('2024-09-15'),
+  5
+);

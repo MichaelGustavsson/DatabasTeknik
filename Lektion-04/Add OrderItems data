@@ -1,0 +1,31 @@
+-- Lägg till beställningen och produkt i OrderItems tabellen...
+INSERT INTO OrderItems(
+  OrderId,
+  ProductId,
+  Quantity,
+  Price
+)
+VALUES(
+  1,
+  1,
+  1,
+  2995
+),
+(
+  1,
+  5,
+  1,
+  495
+),
+(
+  2,
+  3,
+  1,
+  2495
+),
+(
+  3,
+  4,
+  1,
+  1995
+);

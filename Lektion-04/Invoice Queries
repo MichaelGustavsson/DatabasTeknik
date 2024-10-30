@@ -1,0 +1,16 @@
+SELECT
+  Invoices.Id,
+  InvoiceTypes.InvoiceType,
+  InvoiceNumber,
+  SalesOrderId,
+  InvoiceDate,
+  DueDate,
+  Payed,
+  OrderDate,
+  FirstName,
+  LastName,
+  Email
+FROM Invoices INNER JOIN InvoiceTypes
+  ON Invoices.InvoiceType = InvoiceTypes.Id INNER JOIN SalesOrders
+  ON Invoices.SalesOrderId = SalesOrders.Id INNER JOIN Customers
+  ON SalesOrders.CustomerId = Customers.Id;

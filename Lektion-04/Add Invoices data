@@ -1,0 +1,46 @@
+-- Lägg till faktura information...
+-- Vanlig faktura
+INSERT INTO Invoices(
+  InvoiceType,
+  SalesOrderId,
+  InvoiceNumber
+)
+VALUES(
+  1,
+  1,
+  10001
+);
+
+-- Vanlig faktura...
+INSERT INTO Invoices(
+  InvoiceType,
+  SalesOrderId,
+  InvoiceNumber,
+  InvoiceDate,
+  DueDate
+)
+VALUES(
+  1,
+  2,
+  10002,
+  datetime('2024-09-01'),
+  datetime('2024-09-01', '+30 days')
+);
+
+-- Påminnelse faktura...
+INSERT INTO Invoices(
+  InvoiceType,
+  SalesOrderId,
+  InvoiceNumber,
+  InvoiceDate,
+  DueDate
+)
+VALUES(
+  2,
+  2,
+  10002,
+  datetime('now'),
+  datetime('now', '+10 days')
+);
+
+

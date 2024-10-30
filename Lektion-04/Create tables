@@ -1,46 +1,66 @@
 -- Skapa tabellerna...
 CREATE TABLE IF NOT EXISTS  Customers(
   Id INTEGER PRIMARY KEY AUTOINCREMENT,
-  FirstName TEXT,
-  LastName TEXT,
-  Email TEXT,
+  FirstName TEXT NOT NULL,
+  LastName TEXT NOT NULL,
+  Email TEXT NOT NULL UNIQUE,
   Phone TEXT
 );
 
 CREATE TABLE IF NOT EXISTS Addresses(
   Id INTEGER PRIMARY KEY AUTOINCREMENT,
-  CustomerId INTEGER,
-  AddressType INTEGER,
-  AddressLine TEXT,
-  PostalCode TEXT,
-  City TEXT,
+  CustomerId INTEGER  NOT NULL,
+  AddressType INTEGER NOT NULL,
+  AddressLine TEXT NOT NULL,
+  PostalCode TEXT NOT NULL,
+  City TEXT NOT NULL,
   FOREIGN KEY(CustomerId) REFERENCES Customers(Id),
   FOREIGN KEY(AddressType) REFERENCES AddressTypes(Id)
 );
 
 CREATE TABLE IF NOT EXISTS AddressTypes(
   Id INTEGER PRIMARY KEY AUTOINCREMENT,
-  AddressType TEXT
+  AddressType TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS Products(
   Id INTEGER PRIMARY KEY AUTOINCREMENT,
-  ItemNumber TEXT UNIQUE,
-  Name TEXT,
-  Price float
+  ItemNumber TEXT NOT NULL UNIQUE,
+  Name TEXT NOT NULL,
+  Price FLOAT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS SalesOrders(
   Id INTEGER PRIMARY KEY AUTOINCREMENT,
-  OrderDate TEXT,
-  CustomerId INTEGER
+  OrderDate TEXT DEFAULT(datetime('now')) NOT NULL,
+  CustomerId INTEGER NOT NULL,
+  FOREIGN KEY(CustomerId) REFERENCES Customers(Id)
 );
 
 -- Skapa tabellen OrderItems...
 CREATE TABLE IF NOT EXISTS OrderItems(
   OrderId INTEGER,
   ProductId INTEGER,
-  Quantity INTEGER,
-  Price FLOAT,
+  Quantity INTEGER NOT NULL,
+  Price FLOAT NOT NULL,
   PRIMARY KEY(OrderId,ProductId)
+);
+
+-- Skapa tabellen InvoiceTypes...
+CREATE TABLE IF NOT EXISTS InvoiceTypes(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  InvoiceType TEXT NOT NULL UNIQUE
+);
+
+-- Skapa tabellen Invoices...
+CREATE TABLE IF NOT EXISTS Invoices(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  InvoiceType INTEGER NOT NULL,
+  SalesOrderId INTEGER NOT NULL,
+  InvoiceNumber INTEGER NOT NULL,
+  InvoiceDate TEXT DEFAULT (datetime('now')) NOT NULL,
+  DueDate TEXT DEFAULT (datetime('now', '+30 days')) NOT NULL,
+  Payed INTEGER DEFAULT 0 NOT NULL,
+  FOREIGN KEY(SalesOrderId) REFERENCES SalesOrders(Id),
+  FOREIGN KEY(InvoiceType) REFERENCES InvoiceTypes(Id)
 );
