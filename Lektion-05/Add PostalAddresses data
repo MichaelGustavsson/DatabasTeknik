@@ -1,0 +1,12 @@
+INSERT INTO PostalAddresses(
+  PostalCode,
+  City
+)
+VALUES(
+  '44445',
+  'Stenungsund'
+),
+(
+  '44432',
+  'Stenungsund'
+);

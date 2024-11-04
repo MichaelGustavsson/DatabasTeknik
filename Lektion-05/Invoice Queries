@@ -1,0 +1,33 @@
+/*
+SELECT
+  Invoices.Id,
+  InvoiceTypes.InvoiceType,
+  InvoiceNumber,
+  SalesOrderId,
+  InvoiceDate,
+  DueDate,
+  Payed,
+  OrderDate,
+  FirstName,
+  LastName,
+  Email
+FROM Invoices INNER JOIN InvoiceTypes
+  ON Invoices.InvoiceType = InvoiceTypes.Id INNER JOIN SalesOrders
+  ON Invoices.SalesOrderId = SalesOrders.Id INNER JOIN Customers
+  ON SalesOrders.CustomerId = Customers.Id;
+*/
+
+SELECT
+  Invoices.Id,
+  InvoiceNumber,
+  InvoiceDate,
+  DueDate,
+  SUM(OrderItems.Price * Quantity) AS InvoiceValue,
+  SUM(OrderItems.Price * Quantity * VAT.Value) AS SumVAT,
+  SUM(OrderItems.Price * Quantity * (1 + VAT.Value)) AS TotalInvoiceValue
+FROM Invoices INNER JOIN SalesOrders
+  ON Invoices.SalesOrderId = SalesOrders.Id INNER JOIN OrderItems
+  ON SalesOrders.Id = OrderItems.OrderId INNER JOIN Products
+  ON OrderItems.ProductId = Products.Id INNER JOIN VAT
+  ON Products.VAT_Id = VAT.Id
+GROUP BY OrderItems.OrderId

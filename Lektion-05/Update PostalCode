@@ -1,0 +1,7 @@
+SELECT
+  *
+FROM PostalAddresses;
+
+UPDATE PostalAddresses
+SET PostalCode = '44446'
+WHERE Id = 1;

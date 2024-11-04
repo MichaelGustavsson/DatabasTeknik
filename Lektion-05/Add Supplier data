@@ -1,0 +1,15 @@
+INSERT INTO Suppliers(
+  Name,
+  Email,
+  Phone
+)
+VALUES(
+  'Hultafors',
+  'hultafors@gmail.com',
+  '020-112233'
+),
+(
+  'Bosch',
+  'bosch@gmail.com',
+  '020-667788'
+);

@@ -1,0 +1,47 @@
+/*
+  Skapa en fråga som hämta ut kunduppgifter
+  Förnamn, Efternamn, e-post samt
+  adressuppgifter addresstype adress, postnr och ort
+*/
+SELECT
+  FirstName,
+  LastName,
+  Email,
+  AddressLine,
+  PostalCode,
+  City
+FROM Customers INNER JOIN Addresses
+  ON Customers.Id = Addresses.CustomerId INNER JOIN PostalAddresses
+  ON Addresses.PostalAddressId = PostalAddresses.Id;
+/*
+SELECT
+  FirstName,
+  LastName,
+  Email,
+  AddressType,
+  AddressLine,
+  PostalCode,
+  City
+FROM Customers INNER JOIN Addresses
+  ON Customers.Id = Addresses.CustomerId;
+*/
+/*
+  Lägg i frågan så att vi ser i text vilken address typ
+  vi får tillbaka...
+*/
+/*
+SELECT
+  FirstName,
+  LastName,
+  Email,
+  AddressTypes.AddressType,
+  AddressLine,
+  PostalCode,
+  City,
+  OrderDate
+FROM Customers INNER JOIN Addresses
+  ON Customers.Id = Addresses.CustomerId INNER JOIN AddressTypes
+  ON Addresses.AddressType = AddressTypes.Id INNER JOIN SalesOrders
+  ON Customers.Id = SalesOrders.CustomerId;
+
+*/

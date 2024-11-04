@@ -1,0 +1,94 @@
+-- Fråga 1:
+/* 
+  Ger oss radsumman för varje produkt
+  på varje order
+*/
+/*
+SELECT
+  OrderId,
+  Quantity,
+  Name AS ProductName,
+  OrderItems.Price * Quantity AS LineSum 
+FROM OrderItems INNER JOIN Products
+  ON OrderItems.ProductId = Products.Id;
+*/
+
+-- Fråga 2:
+/*
+  För varje order räkna ut totalsumman för allt
+  som är beställt.
+*/
+SELECT
+  SalesOrders.Id AS OrderNumber,
+  OrderDate,
+  Products.Name,
+  Suppliers.Name,
+  Quantity,
+  OrderItems.Price,
+  OrderItems.Price * Quantity AS LineSum
+FROM SalesOrders INNER JOIN OrderItems
+  ON SalesOrders.Id = OrderItems.OrderId INNER JOIN Products
+  ON OrderItems.ProductId = Products.Id INNER JOIN Suppliers
+  ON Products.SupplierId = Suppliers.Id;
+
+/*
+SELECT
+  SalesOrders.Id AS OrderNumber,
+  OrderDate,
+  SUM(Price * Quantity) AS OrderTotal
+FROM SalesOrders INNER JOIN OrderItems
+  ON SalesOrders.Id = OrderItems.OrderId
+GROUP BY OrderId;
+
+SELECT
+  SalesOrders.Id AS OrderNumber,
+  OrderDate,
+  SUM(Price * Quantity) AS OrderTotal
+FROM SalesOrders INNER JOIN OrderItems
+  ON SalesOrders.Id = OrderItems.OrderId
+GROUP BY OrderId
+--HAVING SUM(Price * Quantity) > 2000
+HAVING OrderTotal > 2000
+ORDER BY OrderId;
+
+SELECT
+  OrderDate,
+  SUM(Price * Quantity) AS OrderTotal
+FROM SalesOrders INNER JOIN OrderItems
+  ON SalesOrders.Id = OrderItems.OrderId;
+*/
+
+/*
+SELECT
+  *
+FROM SalesOrders;
+
+SELECT
+  COUNT(*)
+FROM SalesOrders;
+
+SELECT
+  MAX(CustomerId)
+FROM SalesOrders;
+
+SELECT
+  MIN(CustomerId)
+FROM SalesOrders;
+
+SELECT
+  MAX(OrderDate)
+FROM SalesOrders;
+
+SELECT
+  MIN(OrderDate)
+FROM SalesOrders;
+
+SELECT
+  AVG(CustomerId)
+FROM SalesOrders;
+
+SELECT
+  SUM(CustomerId)
+FROM SalesOrders;
+
+*/

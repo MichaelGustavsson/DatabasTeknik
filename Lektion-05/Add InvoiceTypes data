@@ -1,0 +1,12 @@
+INSERT INTO InvoiceTypes(
+  InvoiceType
+)
+VALUES(
+  'Faktura'
+),
+(
+  'Påminnelse'
+),
+(
+  'Kredit'
+);

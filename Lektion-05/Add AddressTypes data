@@ -1,0 +1,9 @@
+INSERT INTO AddressTypes(
+  AddressType
+)
+VALUES(
+  'Leverans'
+),
+(
+  'Faktura'
+) 

@@ -1,0 +1,37 @@
+-- Lägg till testdata i Customers...
+INSERT INTO Customers(
+  FirstName,
+  LastName,
+  Email,
+  Phone
+)
+VALUES(
+  'Michael',
+  'Gustavsson',
+  'michael@gmail.com',
+  '010-11223344'
+),
+(
+  'Erik',
+  'Eriksson',
+  'erik@gmail.com',
+  '073-5566789'
+),
+(
+  'Eva-Lena',
+  'Persson',
+  'evalena@gmail.com',
+  '070-9988789'
+),
+(
+  'Bo',
+  'Olsson',
+  'bosse@gmail.com',
+  '073-9876000'
+),
+(
+  'Liselotte',
+  'Nilsson',
+  'liselotte@gmail.com',
+  '0702-889977'
+);
