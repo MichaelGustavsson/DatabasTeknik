@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS Customers(
+  Id INTEGER PRIMARY KEY AUTOINCREMENT,
+  FirstName TEXT NOT NULL,
+  LastName TEXT NOT NULL,
+  Phone TEXT NOT NULL,
+  MobilePhone TEXT NOT NULL,
+  MainPhone TEXT NOT NULL,
+  Address TEXT NOT NULL,
+  PostalCode TEXT NOT NULL,
+  City TEXT NOT NULL,
+  InvoiceAddress TEXT NOT NULL,
+  InvoicePostalCode TEXT NOT NULL,
+  InvoiceCity TEXT NOT NULL
+);
