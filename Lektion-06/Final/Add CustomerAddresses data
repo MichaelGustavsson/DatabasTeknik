@@ -1,0 +1,27 @@
+DELETE FROM CustomerAddresses;
+
+INSERT INTO CustomerAddresses(
+  CustomerId,
+  AddressId,
+  AddressTypeId
+)
+VALUES(
+  4,
+  1,
+  1
+),
+(
+  5,
+  1,
+  1
+),
+(
+  4,
+  2,
+  2
+),
+(
+  5,
+  2,
+  2
+);

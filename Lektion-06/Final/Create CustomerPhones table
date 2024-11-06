@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS CustomerPhones;
+
+CREATE TABLE IF NOT EXISTS CustomerPhones(
+  CustomerId INTEGER NOT NULL,
+  PhoneId INTEGER NOT NULL,
+  PhoneTypeId INTEGER NOT NULL,
+  PRIMARY KEY(CustomerId,PhoneId,PhoneTypeId)
+);

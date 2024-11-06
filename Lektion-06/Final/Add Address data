@@ -1,0 +1,19 @@
+DELETE FROM Addresses;
+
+INSERT INTO Addresses(
+  Id,
+  Address,
+  PostalCode,
+  City
+)
+VALUES(
+  1,
+  'Lövet 30',
+  '44446',
+  'Stenungsund'
+),(
+  2,
+  'Munkgärdet 15',
+  '44432',
+  'Stenungsund'
+);

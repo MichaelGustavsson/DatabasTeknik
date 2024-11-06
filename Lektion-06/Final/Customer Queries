@@ -1,0 +1,114 @@
+SELECT * FROM Customers;
+SELECT * FROM Addresses;
+SELECT * FROM Phones;
+
+SELECT
+  *
+FROM Customers INNER JOIN CustomerAddresses
+  ON Customers.Id = CustomerAddresses.CustomerId;
+
+SELECT
+  *
+FROM Customers INNER JOIN CustomerAddresses
+  ON Customers.Id = CustomerAddresses.CustomerId INNER JOIN Addresses
+  ON Addresses.Id = CustomerAddresses.AddressId;
+
+SELECT
+  Customers.Id AS CustomerId,
+  FirstName,
+  LastName,
+  Address,
+  PostalCode,
+  City,
+  AddressType
+FROM Customers INNER JOIN CustomerAddresses
+  ON Customers.Id = CustomerAddresses.CustomerId INNER JOIN Addresses
+  ON Addresses.Id = CustomerAddresses.AddressId INNER JOIN AddressTypes
+  ON AddressTypes.Id = CustomerAddresses.AddressTypeId;
+
+SELECT
+  Customers.Id AS CustomerId,
+  FirstName,
+  LastName,
+  Address,
+  PostalCode,
+  City,
+  AddressType
+FROM Customers INNER JOIN CustomerAddresses
+  ON Customers.Id = CustomerAddresses.CustomerId INNER JOIN Addresses
+  ON Addresses.Id = CustomerAddresses.AddressId INNER JOIN AddressTypes
+  ON AddressTypes.Id = CustomerAddresses.AddressTypeId
+WHERE AddressType = 'Faktura';
+
+SELECT
+  Customers.Id AS CustomerId,
+  FirstName,
+  LastName,
+  Address,
+  PostalCode,
+  City,
+  AddressType
+FROM Customers INNER JOIN CustomerAddresses
+  ON Customers.Id = CustomerAddresses.CustomerId INNER JOIN Addresses
+  ON Addresses.Id = CustomerAddresses.AddressId INNER JOIN AddressTypes
+  ON AddressTypes.Id = CustomerAddresses.AddressTypeId
+WHERE Customers.Id = 4;
+
+SELECT
+  *
+FROM Customers INNER JOIN CustomerPhones
+  ON Customers.Id = CustomerPhones.CustomerId;
+
+SELECT
+  *
+FROM Customers INNER JOIN CustomerPhones
+  ON Customers.Id = CustomerPhones.CustomerId INNER JOIN Phones
+  ON Phones.Id = CustomerPhones.PhoneId;
+
+SELECT
+  *
+FROM Customers INNER JOIN CustomerPhones
+  ON Customers.Id = CustomerPhones.CustomerId INNER JOIN Phones
+  ON Phones.Id = CustomerPhones.PhoneId INNER JOIN PhoneTypes
+  ON PhoneTypes.Id = CustomerPhones.PhoneTypeId;
+
+SELECT
+  Customers.Id AS CustomerId,
+  FirstName,
+  LastName,
+  PhoneNumber,
+  PhoneType
+FROM Customers INNER JOIN CustomerPhones
+  ON Customers.Id = CustomerPhones.CustomerId INNER JOIN Phones
+  ON Phones.Id = CustomerPhones.PhoneId INNER JOIN PhoneTypes
+  ON PhoneTypes.Id = CustomerPhones.PhoneTypeId;
+
+SELECT
+  Customers.Id AS CustomerId,
+  FirstName,
+  LastName,
+  PhoneNumber,
+  PhoneType
+FROM Customers INNER JOIN CustomerPhones
+  ON Customers.Id = CustomerPhones.CustomerId INNER JOIN Phones
+  ON Phones.Id = CustomerPhones.PhoneId INNER JOIN PhoneTypes
+  ON PhoneTypes.Id = CustomerPhones.PhoneTypeId
+WHERE Customers.Id = 4 AND PhoneType = 'Mobile';
+/*
+
+SELECT
+  Customers.Id AS CustomerId,
+  FirstName,
+  LastName,
+  PhoneNumber,
+  PhoneType,
+  Address,
+  PostalCode,
+  City,
+  AddressType
+FROM Customers INNER JOIN Phones
+ ON Customers.Id = Phones.CustomerId INNER JOIN Addresses
+ ON Customers.Id = Addresses.CustomerId INNER JOIN AddressTypes
+ ON AddressTypes.Id = Addresses.AddressTypeId INNER JOIN PhoneTypes
+ ON Phones.PhoneTypeId = PhoneTypes.Id;
+*/
