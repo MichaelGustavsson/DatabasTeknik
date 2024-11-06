@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS AddressTypes;
+
+CREATE TABLE IF NOT EXISTS AddressTypes(
+  Id INTEGER PRIMARY KEY,
+  AddressType TEXT NOT NULL
+);

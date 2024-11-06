@@ -1,0 +1,19 @@
+DELETE FROM PhoneTypes;
+
+INSERT INTO PhoneTypes(
+  Id,
+  PhoneType
+)
+VALUES
+  (
+    1,
+    'Mobile'
+  ),
+  (
+    2,
+    'Home'
+  ),
+  (
+    3,
+    'Office'
+  );

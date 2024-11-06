@@ -1,0 +1,23 @@
+SELECT * FROM Customers;
+
+SELECT
+  Customers.Id AS CustomerId,
+  FirstName,
+  LastName,
+  PhoneNumber,
+  PhoneType,
+  Address,
+  PostalCode,
+  City,
+  AddressType
+FROM Customers INNER JOIN Phones
+ ON Customers.Id = Phones.CustomerId INNER JOIN Addresses
+ ON Customers.Id = Addresses.CustomerId INNER JOIN AddressTypes
+ ON AddressTypes.Id = Addresses.AddressTypeId INNER JOIN PhoneTypes
+ ON Phones.PhoneTypeId = PhoneTypes.Id;
+
+-- SELECT
+--   *
+-- FROM Customers INNER JOIN Addresses
+--   ON Customers.Id = Addresses.CustomerId;
+

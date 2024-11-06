@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS Addresses;
+
+CREATE TABLE IF NOT EXISTS Addresses(
+  CustomerId INTEGER NOT NULL,
+  AddressTypeId INTEGER NOT NULL,
+  Address TEXT NOT NULL,
+  PostalCode TEXT NOT NULL,
+  City TEXT NOT NULL,
+  FOREIGN KEY(CustomerId) REFERENCES Customers(Id),
+  FOREIGN KEY(AddressTypeId) REFERENCES AddressTypes(Id)
+);

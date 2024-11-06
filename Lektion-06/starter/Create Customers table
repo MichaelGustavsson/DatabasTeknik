@@ -1,0 +1,9 @@
+-- Steg 1.
+-- Ta bort tabellen om den finns.
+DROP TABLE IF EXISTS Customers;
+
+CREATE TABLE IF NOT EXISTS Customers(
+  Id INTEGER PRIMARY KEY,
+  FirstName TEXT NOT NULL,
+  LastName TEXT NOT NULL
+);

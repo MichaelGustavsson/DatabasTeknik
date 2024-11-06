@@ -1,0 +1,14 @@
+DELETE FROM AddressTypes;
+
+INSERT INTO AddressTypes(
+  Id,
+  AddressType
+)
+VALUES(
+  1,
+  'Leverans'
+),
+(
+  2,
+  'Faktura'
+);
