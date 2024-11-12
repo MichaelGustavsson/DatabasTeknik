@@ -1,0 +1,17 @@
+DELETE FROM Customers;
+
+INSERT INTO Customers(
+  Id,
+  FirstName,
+  LastName
+)
+VALUES(
+  4,
+  'Michael',
+  'Gustavsson'
+),
+(
+  5,
+  'Annika',
+  'Gustavsson'
+);

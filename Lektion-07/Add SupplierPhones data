@@ -1,0 +1,20 @@
+DELETE FROM SupplierPhones;
+
+INSERT INTO SupplierPhones(
+  SupplierId,
+  PhoneId,
+  PhoneTypeId
+)
+VALUES
+(
+  1,
+  5,
+  3
+),
+(
+  2,
+  6,
+  3
+);
+
+

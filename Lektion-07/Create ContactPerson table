@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS ContactPerson;
+
+CREATE TABLE IF NOT EXISTS ContactPerson(
+  Id INTEGER PRIMARY KEY,
+  FirstName TEXT NOT NULL,
+  LastName TEXT NOT NULL,
+  SupplierId INTEGER NOT NULL
+);
+

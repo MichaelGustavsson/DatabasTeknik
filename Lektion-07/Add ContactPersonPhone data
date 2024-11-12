@@ -1,0 +1,23 @@
+DELETE FROM ContactPersonPhones;
+
+INSERT INTO ContactPersonPhones(
+  PhoneId,
+  ContactPersonId,
+  PhoneTypeId
+)
+VALUES
+(
+  7,
+  1,
+  1
+),
+(
+  8,
+  2,
+  1
+),
+(
+  9,
+  3,
+  1
+);

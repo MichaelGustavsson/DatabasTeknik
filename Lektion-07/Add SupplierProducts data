@@ -1,0 +1,27 @@
+DELETE FROM SupplierProducts;
+
+INSERT INTO SupplierProducts(
+  ItemNumber,
+  ProductName,
+  Price,
+  SupplierId
+)
+VALUES
+(
+  'AA12345',
+  'Bosch Cirkelsåg',
+  2995,
+  1
+),
+(
+  'CF56748',
+  'Bosch Skruvdragare Professional',
+  2495,
+  1
+),
+(
+  'GH45367',
+  'Milwaukee Cirkelsåg',
+  4495,
+  2
+);

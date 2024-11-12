@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS ContactPersonPhones;
+
+CREATE TABLE IF NOT EXISTS ContactPersonPhones(
+  PhoneId INTEGER,
+  ContactPersonId INTEGER,
+  PhoneTypeId INTEGER,
+  PRIMARY KEY(PhoneId, ContactPersonId, PhoneTypeId)
+);

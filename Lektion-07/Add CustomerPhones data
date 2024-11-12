@@ -1,0 +1,22 @@
+DELETE FROM CustomerPhones;
+
+INSERT INTO CustomerPhones(
+  CustomerId,
+  PhoneId,
+  PhoneTypeId
+)
+VALUES(
+  4,
+  1,
+  2
+),
+(
+  4,
+  2,
+  1
+),
+(
+  5,
+  1,
+  2
+);

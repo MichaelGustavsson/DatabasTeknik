@@ -1,0 +1,23 @@
+DELETE FROM Suppliers;
+
+INSERT INTO Suppliers(
+  Id,
+  Name,
+  Email
+)
+VALUES
+(
+  1,
+  'Bosch',
+  'info@bosch.com'
+),
+(
+  2,
+  'Milwaukee',
+  'info@milwaukee.com'
+),
+(
+  3,
+  'Dewalt',
+  'info@dewalt.com'
+);

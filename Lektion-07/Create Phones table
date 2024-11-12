@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS Phones;
+
+CREATE TABLE IF NOT EXISTS Phones(
+  Id INTEGER PRIMARY KEY,
+  PhoneNumber TEXT NOT NULL UNIQUE
+);
+
+/*
+-- Innan refactoring...
+CREATE TABLE IF NOT EXISTS Phones(
+  CustomerId INTEGER NOT NULL,
+  PhoneTypeId INTEGER NOT NULL,
+  PhoneNumber TEXT NOT NULL,
+  FOREIGN KEY(CustomerId) REFERENCES Customers(Id),
+  FOREIGN KEY(PhoneTypeId) REFERENCES PhoneTypes(Id)
+);
+*/

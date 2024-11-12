@@ -1,0 +1,30 @@
+
+SELECT
+  Name,
+  FirstName,
+  LastName,
+  PhoneNumber,
+  Address,
+  PostalCode,
+  City,
+  AddressType
+FROM Suppliers INNER JOIN SupplierAddresses
+  ON Suppliers.Id = SupplierAddresses.SupplierId INNER JOIN Addresses
+  ON SupplierAddresses.AddressId = Addresses.Id INNER JOIN AddressTypes
+  ON SupplierAddresses.AddressTypeId = AddressTypes.Id INNER JOIN ContactPersonPhones
+  ON ContactPerson.Id = ContactPersonPhones.ContactPersonId INNER JOIN Phones
+  ON ContactPersonPhones.PhoneId = Phones.Id INNER JOIN ContactPerson
+  ON Suppliers.Id = ContactPerson.SupplierId
+
+  -- Presentera en lista av produkter...
+  SELECT
+    ItemNumber,
+    ProductName,
+    Price,
+    Name AS Supplier
+  FROM SupplierProducts INNER JOIN Suppliers
+    ON SupplierProducts.SupplierId = Suppliers.Id;
+
+SELECT * FROM Suppliers;
+
+SELECT * FROM SupplierProducts WHERE SupplierId = 1;

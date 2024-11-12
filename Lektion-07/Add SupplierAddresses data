@@ -1,0 +1,18 @@
+DELETE FROM SupplierAddresses;
+
+INSERT INTO SupplierAddresses(
+  SupplierId,
+  AddressId,
+  AddressTypeId
+)
+VALUES
+(
+  1,
+  3,
+  3
+),
+(
+  2,
+  4,
+  3
+);

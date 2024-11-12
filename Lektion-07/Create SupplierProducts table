@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS SupplierProducts;
+
+CREATE TABLE IF NOT EXISTS SupplierProducts(
+  ItemNumber TEXT PRIMARY KEY,
+  ProductName TEXT NOT NULL,
+  Price FLOAT NOT NULL,
+  SupplierId INTEGER NOT NULL
+);

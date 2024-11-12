@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS CustomerAddresses;
+
+CREATE TABLE IF NOT EXISTS CustomerAddresses(
+  CustomerId INTEGER NOT NULL,
+  AddressId INTEGER NOT NULL,
+  AddressTypeId INTEGER NOT NULL,
+  PRIMARY KEY(CustomerId, AddressId, AddressTypeId)
+);

@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS SupplierAddresses;
+
+CREATE TABLE IF NOT EXISTS SupplierAddresses(
+  SupplierId INTEGER NOT NULL,
+  AddressId INTEGER NOT NULL,
+  AddressTypeId INTEGER NOT NULL,
+  PRIMARY KEY(SupplierId, AddressId, AddressTypeId)
+);
